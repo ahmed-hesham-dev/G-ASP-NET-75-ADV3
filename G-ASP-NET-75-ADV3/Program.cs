@@ -49,48 +49,93 @@
 
             #region Exercise 2 - Leaderboard
 
-            SortedDictionary<int, string> leaderboard =
-                new SortedDictionary<int, string>();
+            //SortedDictionary<int, string> leaderboard =
+            //    new SortedDictionary<int, string>();
 
-            leaderboard.Add(500, "Ahmed");
-            leaderboard.Add(200, "Sara");
-            leaderboard.Add(800, "Ali");
-            leaderboard.Add(350, "Mona");
+            //leaderboard.Add(500, "Ahmed");
+            //leaderboard.Add(200, "Sara");
+            //leaderboard.Add(800, "Ali");
+            //leaderboard.Add(350, "Mona");
 
-            Console.WriteLine("\nExercise 2 - Leaderboard");
+            //Console.WriteLine("\nExercise 2 - Leaderboard");
 
-            Console.WriteLine("Leaderboard:");
+            //Console.WriteLine("Leaderboard:");
 
-            foreach (var player in leaderboard)
-            {
-                Console.WriteLine(player.Key + " = " + player.Value);
-            }
+            //foreach (var player in leaderboard)
+            //{
+            //    Console.WriteLine(player.Key + " = " + player.Value);
+            //}
 
-            Console.WriteLine("First Key: " + leaderboard.First().Key);
-            Console.WriteLine("First Value: " + leaderboard.First().Value);
+            //Console.WriteLine("First Key: " + leaderboard.First().Key);
+            //Console.WriteLine("First Value: " + leaderboard.First().Value);
 
-            Console.WriteLine("Score 500 Exists: " + leaderboard.ContainsKey(500));
+            //Console.WriteLine("Score 500 Exists: " + leaderboard.ContainsKey(500));
 
-            if (leaderboard.TryGetValue(999, out string playerName))
-            {
-                Console.WriteLine("Player with score 999: " + playerName);
-            }
-            else
-            {
-                Console.WriteLine("Player with score 999: Not Found");
-            }
+            //if (leaderboard.TryGetValue(999, out string playerName))
+            //{
+            //    Console.WriteLine("Player with score 999: " + playerName);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Player with score 999: Not Found");
+            //}
 
-            leaderboard.Remove(200);
+            //leaderboard.Remove(200);
 
-            Console.WriteLine("After Removing Score 200:");
+            //Console.WriteLine("After Removing Score 200:");
 
-            foreach (var player in leaderboard)
-            {
-                Console.WriteLine(player.Key + " = " + player.Value);
-            }
+            //foreach (var player in leaderboard)
+            //{
+            //    Console.WriteLine(player.Key + " = " + player.Value);
+            //}
 
             #endregion
 
+
+
+            #region Exercise 3 - Phone Book
+
+            Dictionary<string, string> phoneBook =
+                new Dictionary<string, string>();
+
+            phoneBook.Add("Ahmed", "01011111111");
+            phoneBook.Add("Sara", "01122222222");
+            phoneBook.Add("Ali", "01233333333");
+            phoneBook.Add("Mona", "01544444444");
+
+            Console.WriteLine("\nExercise 3 - Phone Book");
+
+            phoneBook["Omar"] = "01055555555";
+
+            try
+            {
+                phoneBook.Add("Ahmed", "01099999999");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Add Error: " + ex.Message);
+            }
+
+            bool added = phoneBook.TryAdd("Ahmed", "01099999999");
+
+            Console.WriteLine("TryAdd succeeded: " + added);
+
+            
+            bool exists = phoneBook.ContainsKey("Youssef");
+
+            Console.WriteLine("Youssef Exists: " + exists);
+
+            string phone = phoneBook.GetValueOrDefault("Youssef", "Not Found");
+
+            Console.WriteLine("Youssef Phone: " + phone);
+
+            Console.WriteLine("Keys:");
+            Console.WriteLine(string.Join(", ", phoneBook.Keys));
+
+            Console.WriteLine("Values:");
+            Console.WriteLine(string.Join(", ", phoneBook.Values));
+
+            #endregion
 
         }
 
