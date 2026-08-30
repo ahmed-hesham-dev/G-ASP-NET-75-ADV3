@@ -242,6 +242,51 @@
 
 
 
+            #region Exercise 6 - Browser History
+
+            Stack<string> browserHistory = new Stack<string>();
+
+            browserHistory.Push("google.com");
+            browserHistory.Push("github.com");
+            browserHistory.Push("stackoverflow.com");
+            browserHistory.Push("youtube.com");
+            browserHistory.Push("claude.ai");
+
+            Console.WriteLine("\nExercise 6 - Browser History");
+
+            Console.WriteLine(
+                "Current Page: " + browserHistory.Peek()
+            );
+
+            Console.WriteLine("Going Back:");
+
+            for (int i = 0; i < 3; i++)
+            {
+                string page = browserHistory.Pop();
+
+                Console.WriteLine("Left: " + page);
+            }
+
+            Console.WriteLine(
+                "Current Page After Going Back: " + browserHistory.Peek()
+            );
+
+            // TryPop on empty stack
+            while (browserHistory.Count > 0)
+            {
+                browserHistory.Pop();
+            }
+
+            if (browserHistory.TryPop(out string pageAfterEmpty))
+            {
+                Console.WriteLine("Page: " + pageAfterEmpty);
+            }
+            else
+            {
+                Console.WriteLine("TryPop: Stack is empty");
+            }
+
+            #endregion
         }
 
     }
