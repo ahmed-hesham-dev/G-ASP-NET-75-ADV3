@@ -138,63 +138,105 @@
             #endregion
             #region Exercise 4 - Unique Email Validator
 
-            HashSet<string> emails =
-                new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            //    HashSet<string> emails =
+            //        new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-            emails.Add("ahmed@test.com");
-            emails.Add("AHMED@test.com");
-            emails.Add("@test.com");
-            emails.Add("=@Test.Com");
+            //    emails.Add("ahmed@test.com");
+            //    emails.Add("AHMED@test.com");
+            //    emails.Add("@test.com");
+            //    emails.Add("=@Test.Com");
 
-            Console.WriteLine("\nExercise 4 - Unique Email Validator");
+            //    Console.WriteLine("\nExercise 4 - Unique Email Validator");
 
-            Console.WriteLine("Email Count: " + emails.Count);
+            //    Console.WriteLine("Email Count: " + emails.Count);
 
-            Console.WriteLine(
-                "AHMED@test.com and ahmed@test.com are treated as the same email."
-            );
+            //    Console.WriteLine(
+            //        "AHMED@test.com and ahmed@test.com are treated as the same email."
+            //    );
 
-            Console.WriteLine(
-                "Sara@test.com and Sara@Test.Com are treated as the same email."
-            );
+            //    Console.WriteLine(
+            //        "Sara@test.com and Sara@Test.Com are treated as the same email."
+            //    );
 
-            HashSet<int> setA = new HashSet<int>
-        {
-            1, 2, 3, 4, 5
-        };
+            //    HashSet<int> setA = new HashSet<int>
+            //{
+            //    1, 2, 3, 4, 5
+            //};
 
-            HashSet<int> setB = new HashSet<int>
-        {
-            4, 5, 6, 7, 8
-        };
+            //    HashSet<int> setB = new HashSet<int>
+            //{
+            //    4, 5, 6, 7, 8
+            //};
 
-            HashSet<int> unionSet = new HashSet<int>(setA);
-            unionSet.UnionWith(setB);
+            //    HashSet<int> unionSet = new HashSet<int>(setA);
+            //    unionSet.UnionWith(setB);
 
-            Console.WriteLine("UnionWith: " + string.Join(", ", unionSet));
+            //    Console.WriteLine("UnionWith: " + string.Join(", ", unionSet));
 
-            HashSet<int> intersectSet = new HashSet<int>(setA);
-            intersectSet.IntersectWith(setB);
+            //    HashSet<int> intersectSet = new HashSet<int>(setA);
+            //    intersectSet.IntersectWith(setB);
 
-            Console.WriteLine(
-                "IntersectWith: " + string.Join(", ", intersectSet)
-            );
+            //    Console.WriteLine(
+            //        "IntersectWith: " + string.Join(", ", intersectSet)
+            //    );
 
-            HashSet<int> exceptSet = new HashSet<int>(setA);
-            exceptSet.ExceptWith(setB);
+            //    HashSet<int> exceptSet = new HashSet<int>(setA);
+            //    exceptSet.ExceptWith(setB);
 
-            Console.WriteLine(
-                "ExceptWith: " + string.Join(", ", exceptSet)
-            );
+            //    Console.WriteLine(
+            //        "ExceptWith: " + string.Join(", ", exceptSet)
+            //    );
 
-            HashSet<int> subset = new HashSet<int>
-        {
-            1, 2
-        };
+            //    HashSet<int> subset = new HashSet<int>
+            //{
+            //    1, 2
+            //};
 
-            Console.WriteLine(
-                "{1,2} Is Subset Of Set A: " + subset.IsSubsetOf(setA)
-            );
+            //    Console.WriteLine(
+            //        "{1,2} Is Subset Of Set A: " + subset.IsSubsetOf(setA)
+            //    );
+
+            #endregion
+
+            #region Exercise 5 - Print Queue Simulator
+
+            //Queue<string> printQueue = new Queue<string>();
+
+            //printQueue.Enqueue("Report.pdf");
+            //printQueue.Enqueue("Invoice.pdf");
+            //printQueue.Enqueue("Letter.docx");
+            //printQueue.Enqueue("Resume.pdf");
+            //printQueue.Enqueue("Photo.jpg");
+
+            //Console.WriteLine("\nExercise 5 - Print Queue Simulator");
+
+            //Console.WriteLine("Queue:");
+            //Console.WriteLine(string.Join(", ", printQueue));
+
+            //Console.WriteLine("Count: " + printQueue.Count);
+
+            //Console.WriteLine(
+            //    "Next Document: " + printQueue.Peek()
+            //);
+
+            //Console.WriteLine("Processing Queue:");
+
+            //while (printQueue.Count > 0)
+            //{
+            //    string document = printQueue.Dequeue();
+
+            //    Console.WriteLine("Printing: " + document);
+            //}
+
+            //// TryDequeue on empty queue
+            //if (printQueue.TryDequeue(out string nextDocument))
+            //{
+            //    Console.WriteLine("Printing: " + nextDocument);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("TryDequeue: Queue is empty");
+            //}
 
             #endregion
 
