@@ -95,47 +95,110 @@
 
             #region Exercise 3 - Phone Book
 
-            Dictionary<string, string> phoneBook =
-                new Dictionary<string, string>();
+            //Dictionary<string, string> phoneBook =
+            //    new Dictionary<string, string>();
 
-            phoneBook.Add("Ahmed", "01011111111");
-            phoneBook.Add("Sara", "01122222222");
-            phoneBook.Add("Ali", "01233333333");
-            phoneBook.Add("Mona", "01544444444");
+            //phoneBook.Add("Ahmed", "01011111111");
+            //phoneBook.Add("Sara", "01122222222");
+            //phoneBook.Add("Ali", "01233333333");
+            //phoneBook.Add("Mona", "01544444444");
 
-            Console.WriteLine("\nExercise 3 - Phone Book");
+            //Console.WriteLine("\nExercise 3 - Phone Book");
 
-            phoneBook["Omar"] = "01055555555";
+            //phoneBook["Omar"] = "01055555555";
 
-            try
-            {
-                phoneBook.Add("Ahmed", "01099999999");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine("Add Error: " + ex.Message);
-            }
+            //try
+            //{
+            //    phoneBook.Add("Ahmed", "01099999999");
+            //}
+            //catch (ArgumentException ex)
+            //{
+            //    Console.WriteLine("Add Error: " + ex.Message);
+            //}
 
-            bool added = phoneBook.TryAdd("Ahmed", "01099999999");
+            //bool added = phoneBook.TryAdd("Ahmed", "01099999999");
 
-            Console.WriteLine("TryAdd succeeded: " + added);
+            //Console.WriteLine("TryAdd succeeded: " + added);
 
-            
-            bool exists = phoneBook.ContainsKey("Youssef");
 
-            Console.WriteLine("Youssef Exists: " + exists);
+            //bool exists = phoneBook.ContainsKey("Youssef");
 
-            string phone = phoneBook.GetValueOrDefault("Youssef", "Not Found");
+            //Console.WriteLine("Youssef Exists: " + exists);
 
-            Console.WriteLine("Youssef Phone: " + phone);
+            //string phone = phoneBook.GetValueOrDefault("Youssef", "Not Found");
 
-            Console.WriteLine("Keys:");
-            Console.WriteLine(string.Join(", ", phoneBook.Keys));
+            //Console.WriteLine("Youssef Phone: " + phone);
 
-            Console.WriteLine("Values:");
-            Console.WriteLine(string.Join(", ", phoneBook.Values));
+            //Console.WriteLine("Keys:");
+            //Console.WriteLine(string.Join(", ", phoneBook.Keys));
+
+            //Console.WriteLine("Values:");
+            //Console.WriteLine(string.Join(", ", phoneBook.Values));
 
             #endregion
+            #region Exercise 4 - Unique Email Validator
+
+            HashSet<string> emails =
+                new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            emails.Add("ahmed@test.com");
+            emails.Add("AHMED@test.com");
+            emails.Add("@test.com");
+            emails.Add("=@Test.Com");
+
+            Console.WriteLine("\nExercise 4 - Unique Email Validator");
+
+            Console.WriteLine("Email Count: " + emails.Count);
+
+            Console.WriteLine(
+                "AHMED@test.com and ahmed@test.com are treated as the same email."
+            );
+
+            Console.WriteLine(
+                "Sara@test.com and Sara@Test.Com are treated as the same email."
+            );
+
+            HashSet<int> setA = new HashSet<int>
+        {
+            1, 2, 3, 4, 5
+        };
+
+            HashSet<int> setB = new HashSet<int>
+        {
+            4, 5, 6, 7, 8
+        };
+
+            HashSet<int> unionSet = new HashSet<int>(setA);
+            unionSet.UnionWith(setB);
+
+            Console.WriteLine("UnionWith: " + string.Join(", ", unionSet));
+
+            HashSet<int> intersectSet = new HashSet<int>(setA);
+            intersectSet.IntersectWith(setB);
+
+            Console.WriteLine(
+                "IntersectWith: " + string.Join(", ", intersectSet)
+            );
+
+            HashSet<int> exceptSet = new HashSet<int>(setA);
+            exceptSet.ExceptWith(setB);
+
+            Console.WriteLine(
+                "ExceptWith: " + string.Join(", ", exceptSet)
+            );
+
+            HashSet<int> subset = new HashSet<int>
+        {
+            1, 2
+        };
+
+            Console.WriteLine(
+                "{1,2} Is Subset Of Set A: " + subset.IsSubsetOf(setA)
+            );
+
+            #endregion
+
+
 
         }
 
